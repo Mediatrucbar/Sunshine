@@ -90,9 +90,11 @@ public class ForecastFragment extends Fragment {
         return rootView;
     }
 
-    private class FetchWeatherTask extends AsyncTask<String, Void, Void> {
 
-        private final String LOG_TAG =  FetchWeatherTask.class.getSimpleName();
+    public static final String LOG_TAG =  FetchWeatherTask.class.getSimpleName();
+
+
+    public class FetchWeatherTask extends AsyncTask<String, Void, Void> {
 
         @Override
         protected Void doInBackground(String... params) {
@@ -117,8 +119,7 @@ public class ForecastFragment extends Fragment {
                 // Construct the URL for the OpenWeatherMap query
                 // Possible parameters are available at OWM's forecast API page, at
                 // http://openweathermap.org/API#forecast
-                // Key : 342cf5f3b997fadf2bc227ddf6e259ca
-                //URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7&APPID=342cf5f3b997fadf2bc227ddf6e259ca");
+                // Personnal Key : 342cf5f3b997fadf2bc227ddf6e259ca
 
                 final String FORECAST_BASE_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?";
                 final String QUERY_PARAM = "q";
